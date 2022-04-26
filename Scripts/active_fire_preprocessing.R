@@ -7,7 +7,7 @@
 # .... setting -----
 
 outputDir = "Graphs/"
-inputDIR = "Data/borno_af/borno_clip.shp"
+inputDIR = "Data/"
 data_crs = data_crs
 
 # .... loading packages ----
@@ -36,10 +36,9 @@ data_crs <- "+proj=tmerc +lat_0=4 +lon_0=12.5 +k=0.99975 +x_0=1110369.7
 
 # ... load data
 
-border <- st_read("E:/Migrawave_project/data/shapefiles/borno_admin1_boundaries_states/
-                  borno_lga/borno_lga.shp")
+border <- st_read("../Data/shapefile_lga/borno_lga.shp")
 
-modis <- st_read("E:/Migrawave_project/data/Nigeria_borno_active_fire/subset_borno - Copy.shp")%>%
+modis <- st_read("...Data/modis_data/subset_borno.shp")%>%
   st_transform(., data_crs)
 
 # ... removing outliers
