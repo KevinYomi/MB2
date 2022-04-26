@@ -36,7 +36,8 @@ data_crs <- "+proj=tmerc +lat_0=4 +lon_0=12.5 +k=0.99975 +x_0=1110369.7
 
 # ... load data
 
-border <- st_read("../Data/shapefile_lga/borno_lga.shp")
+border <- st_read("../Data/shapefile_lga/borno_lga.shp")%>%
+  st_transform(., data_crs)
 
 modis <- st_read("...Data/modis_data/subset_borno.shp")%>%
   st_transform(., data_crs)
